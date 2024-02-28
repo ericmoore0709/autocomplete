@@ -9,14 +9,10 @@ function search(str) {
 }
 
 function searchHandler(e) {
-	console.log("searchHandler");
-	// TODO
 	showSuggestions(search(e.target.value), e.target.value);
 }
 
 function showSuggestions(results, inputVal) {
-	console.log("showSuggestions");
-	// TODO
 	while (suggestions.lastChild)
 		suggestions.removeChild(suggestions.lastChild);
 
@@ -28,8 +24,6 @@ function showSuggestions(results, inputVal) {
 }
 
 function useSuggestion(e) {
-	console.log("useSuggestion");
-	// TODO
 	input.value = e.target.textContent;
 	while (suggestions.lastChild)
 		suggestions.removeChild(suggestions.lastChild);
