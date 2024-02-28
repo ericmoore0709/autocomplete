@@ -9,14 +9,17 @@ function search(str) {
 }
 
 function searchHandler(e) {
-	showSuggestions(search(e.target.value), e.target.value);
+	const searchTerm = e.target.value;
+	const searchResults = search(searchTerm);
+
+	showSuggestions(searchResults, searchTerm);
 }
 
 function showSuggestions(results, inputVal) {
 	while (suggestions.lastChild)
 		suggestions.removeChild(suggestions.lastChild);
 
-	search(inputVal).forEach((x) => {
+	results.forEach((x) => {
 		const li = document.createElement('li');
 		li.textContent = x;
 		suggestions.appendChild(li);
